@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: name-spring-cloud-goods
+  profiles:
+    active: dev
+
+server:
+  port: 10003
+  servlet:
+    context-path: /goods
+
+management:
+  server:
+    port: 11003
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+mybatis:
+  type-aliases-package: com.charles.spring.cloud.goods.entity
+

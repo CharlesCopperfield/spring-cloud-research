@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: name-spring-cloud-order
+  profiles:
+    active: dev
+
+server:
+  port: 10002
+  servlet:
+    context-path: /order
+
+management:
+  server:
+    port: 11002
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+mybatis:
+  type-aliases-package: com.charles.spring.cloud.order.entity
+
+test:
+  sort: ${spring.application.name}.bootstrap.yml

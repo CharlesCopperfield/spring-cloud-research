@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.charles.spring.cloud.goods.mapper.GoodsMapper">
+    <resultMap id="BaseResultMap" type="com.charles.spring.cloud.goods.entity.Goods">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="goods_number" jdbcType="VARCHAR" property="goodsNumber"/>
+        <result column="goods_price" jdbcType="DOUBLE" property="goodsPrice"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, goods_number, goods_price
+  </sql>
+
+</mapper>

@@ -1,0 +1,53 @@
+#==============test================
+test:
+  sort: framework
+#==============test================
+#==============consul================
+spring:
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        register: true
+        serviceName: ${spring.application.name}
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 30s
+        instanceId: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      maximum-pool-size: 15
+      minimum-idle: 2
+
+  redis:
+    database: 0
+    host: 192.168.0.101
+    port: 6379
+    password:
+    timeout: 5000
+    pool:
+      max-active: 200
+      max-wait: -1
+      max-idle: 3
+      min-idle: 0
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+mapper:
+  not-empty: false
+  identity: MYSQL
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+feign:
+  hystrix:
+    enabled: true
+  httpclient:
+    connection-timeout: 60000
