@@ -6,13 +6,13 @@ test:
 spring:
   cloud:
     consul:
-      host: 192.168.0.104
-      port: 8500
       discovery:
         register: true
         serviceName: ${spring.application.name}
+        ipAddress: ${spring.cloud.client.ip-address}
+        hostname: ${spring.cloud.client.ip-address}
         healthCheckPath: /actuator/health
-        healthCheckInterval: 30s
+        healthCheckInterval: 10s
         instanceId: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
 
   datasource:
