@@ -15,7 +15,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: health,info
 
 mybatis:
   type-aliases-package: com.charles.spring.cloud.user.entity
