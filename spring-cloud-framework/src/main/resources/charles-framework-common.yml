@@ -6,7 +6,7 @@ test:
 spring:
   cloud:
     consul:
-      host: 127.0.0.1
+      host: 192.168.0.104
       port: 8500
       discovery:
         register: true
@@ -23,7 +23,7 @@ spring:
 
   redis:
     database: 0
-    host: 192.168.0.101
+    host: 192.168.0.104
     port: 6379
     password:
     timeout: 5000

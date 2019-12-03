@@ -9,7 +9,6 @@ import org.springframework.context.annotation.*;
  */
 @Configuration
 @ComponentScan
-//@PropertySource("classpath:framework.common.application.properties")
 public class SpringCloudFrameworkApplication {
 
     public static void main(String[] args) {
