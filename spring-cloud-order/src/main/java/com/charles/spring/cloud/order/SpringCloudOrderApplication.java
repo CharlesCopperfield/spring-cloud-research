@@ -19,7 +19,5 @@ import java.util.stream.Stream;
 public class SpringCloudOrderApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(SpringCloudOrderApplication.class, args);
-        String[] names = context.getBeanDefinitionNames();
-        Stream.of(names).map(n -> "----------beanName=" + n).forEach(System.out::println);
     }
 }

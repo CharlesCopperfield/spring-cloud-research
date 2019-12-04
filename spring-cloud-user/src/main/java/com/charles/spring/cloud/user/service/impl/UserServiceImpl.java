@@ -10,6 +10,8 @@ import com.charles.spring.cloud.user.feign.OrderFeignService;
 import com.charles.spring.cloud.user.mapper.UserMapper;
 import com.charles.spring.cloud.framework.module.user.bo.UserBO;
 import ma.glasnost.orika.MapperFacade;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
@@ -23,6 +25,8 @@ import java.util.stream.Collectors;
  */
 @Service
 public class UserServiceImpl implements UserService {
+
+    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Autowired
     private UserMapper userMapper;
@@ -43,11 +47,15 @@ public class UserServiceImpl implements UserService {
     public List<UserBO> queryAll() {
         String redisKey = "UserServiceImpl.queryAll";
         if (stringRedisTemplate.hasKey(redisKey)) {
+            logger.info("从redis中读数据");
             List<UserBO> listForJson = redisUtils.getListForJson(redisKey, UserBO.class);
             return listForJson;
         }
         List<UserBO> userBOS = mapperFacade.mapAsList(userMapper.selectAll(), UserBO.class);
         redisUtils.setValueForJson(redisKey, userBOS);
+
+        logger.info("从数据库读");
+
         return userBOS;
     }
 

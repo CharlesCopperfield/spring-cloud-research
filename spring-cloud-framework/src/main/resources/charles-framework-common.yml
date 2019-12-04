@@ -12,7 +12,7 @@ spring:
         ipAddress: ${spring.cloud.client.ip-address}
         hostname: ${spring.cloud.client.ip-address}
         healthCheckPath: /actuator/health
-        healthCheckInterval: 10s
+        healthCheckInterval: 30s
         instanceId: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
 
   datasource:

@@ -5,8 +5,8 @@ spring:
     active: dev
   cloud:
     consul:
-      host: 192.168.0.104
-#      host: localhost
+#      host: 192.168.0.104
+      host: localhost
       port: 8500
 
 server:
@@ -27,3 +27,10 @@ mybatis:
 
 test:
   sort: ${spring.application.name}.bootstrap.yml
+
+feign:
+  hystrix:
+    enabled: true
+
+  httpclient:
+    connection-timeout: 60000

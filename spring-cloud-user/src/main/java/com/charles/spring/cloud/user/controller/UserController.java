@@ -1,8 +1,8 @@
 package com.charles.spring.cloud.user.controller;
 
+import com.charles.spring.cloud.framework.module.user.bo.UserBO;
 import com.charles.spring.cloud.framework.module.user.service.UserService;
 import com.charles.spring.cloud.framework.utils.ReturnMessage;
-import com.charles.spring.cloud.framework.module.user.bo.UserBO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
