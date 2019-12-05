@@ -50,12 +50,12 @@ public class ControllerAspect {
         try {
             returnMessage = (ReturnMessage) joinPoint.proceed();
         } catch (Throwable throwable) {
-            logger.error("exception to call controller method(" + methodName + "), the params=" +
+            logger.error("exception to call controller method=" + methodName + ", the params=" +
                     JsonUtils.getObjToString(args), throwable);
             // 生产环境不返回报错信息
             returnMessage = ReturnMessage.fail("prod".equalsIgnoreCase(profile) ? null : throwable);
         } finally {
-            logger.info("call controller cost {} ms, controller method={}", (System.currentTimeMillis() - start), methodName);
+            logger.info("end call controller cost {} ms, controller method={}", (System.currentTimeMillis() - start), methodName);
             String traceIdString = tracer.currentSpan().context().traceIdString();
             returnMessage.setTraceId(traceIdString);
         }

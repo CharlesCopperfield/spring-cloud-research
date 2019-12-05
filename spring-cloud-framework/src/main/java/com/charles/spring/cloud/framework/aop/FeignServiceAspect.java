@@ -45,14 +45,14 @@ public class FeignServiceAspect {
         long start = System.currentTimeMillis();
         Object result = null;
         try {
-            logger.info("begin call feignService method({})", methodName);
+            logger.info("begin call feignService method={}", methodName);
             result = joinPoint.proceed();
         } catch (Throwable e) {
-            logger.error("exception to call feignService method(" + methodName + "), the params=" +
+            logger.error("exception to call feignService method=" + methodName + ", the params=" +
                     JsonUtils.getObjToString(args));
             throw new FeignCallException(e);
         } finally {
-            logger.info("feignService cost {} ms, end execute feignService method({}), the result={},", (System.currentTimeMillis() - start), methodName,
+            logger.info("end call feignService cost {} ms, feignService method={}, the result={},", (System.currentTimeMillis() - start), methodName,
                     null == result ? "null" : result.toString());
         }
         return result;
