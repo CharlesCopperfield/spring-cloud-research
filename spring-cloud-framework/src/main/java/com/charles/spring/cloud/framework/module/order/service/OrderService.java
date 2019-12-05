@@ -14,7 +14,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(ApplicationNameAndPathConstants.ORDER_APP_BASEPATH +
-        "/order" + ApplicationNameAndPathConstants.INNER_SERVICE_PATH_SUFFIX)
+        "/order" + ApplicationNameAndPathConstants.INNER_SERVICE_PATH_FLAG)
 public interface OrderService {
 
     @GetMapping("/queryAll")

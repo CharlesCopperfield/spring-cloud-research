@@ -26,10 +26,11 @@ public class RequestLogFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         String requestURI = request.getRequestURI();
-        // 记录内部service调用
+        // 记录controller和内部service调用
+        boolean isController = requestURI.contains(ApplicationNameAndPathConstants.CONTROLLER_PATH_FLAG);
+        boolean isInnerService = requestURI.contains(ApplicationNameAndPathConstants.INNER_SERVICE_PATH_FLAG);
         long start = System.currentTimeMillis();
-        boolean isInnerService = requestURI.contains(ApplicationNameAndPathConstants.INNER_SERVICE_PATH_SUFFIX);
-        if (isInnerService) {
+        if (isInnerService || isController) {
             logger.info(RequestUtils.getRequestMessage(request));
         }
 

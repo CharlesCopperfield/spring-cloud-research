@@ -1,5 +1,6 @@
 package com.charles.spring.cloud.user.controller;
 
+import com.charles.spring.cloud.framework.constants.ApplicationNameAndPathConstants;
 import com.charles.spring.cloud.framework.module.user.bo.UserBO;
 import com.charles.spring.cloud.framework.module.user.service.UserService;
 import com.charles.spring.cloud.framework.utils.ReturnMessage;
@@ -19,7 +20,7 @@ import java.util.List;
  */
 @Api("用户服务")
 @RestController
-@RequestMapping("/user")
+@RequestMapping(ApplicationNameAndPathConstants.CONTROLLER_PATH_FLAG + "/user")
 @Slf4j
 public class UserController {
 

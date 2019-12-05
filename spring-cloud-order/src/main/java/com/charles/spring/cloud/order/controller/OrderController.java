@@ -1,5 +1,6 @@
 package com.charles.spring.cloud.order.controller;
 
+import com.charles.spring.cloud.framework.constants.ApplicationNameAndPathConstants;
 import com.charles.spring.cloud.framework.module.order.bo.OrderBO;
 import com.charles.spring.cloud.framework.utils.ReturnMessage;
 import com.charles.spring.cloud.framework.module.order.service.OrderService;
@@ -18,7 +19,7 @@ import java.util.List;
  */
 @Api("订单服务")
 @RestController
-@RequestMapping("/order")
+@RequestMapping(ApplicationNameAndPathConstants.CONTROLLER_PATH_FLAG +"/order")
 public class OrderController {
 
     @Autowired

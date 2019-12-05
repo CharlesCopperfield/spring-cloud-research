@@ -1,5 +1,6 @@
 package com.charles.spring.cloud.goods.controller;
 
+import com.charles.spring.cloud.framework.constants.ApplicationNameAndPathConstants;
 import com.charles.spring.cloud.framework.module.goods.bo.GoodsBO;
 import com.charles.spring.cloud.framework.module.goods.service.GoodsService;
 import com.charles.spring.cloud.framework.utils.ReturnMessage;
@@ -19,7 +20,7 @@ import java.util.List;
  */
 @Api("商品服务")
 @RestController
-@RequestMapping("/goods")
+@RequestMapping(ApplicationNameAndPathConstants.CONTROLLER_PATH_FLAG + "/goods")
 public class GoodsController {
 
     @Autowired

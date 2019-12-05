@@ -14,7 +14,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(ApplicationNameAndPathConstants.USER_APP_BASEPATH +
-        "/user" + ApplicationNameAndPathConstants.INNER_SERVICE_PATH_SUFFIX)
+        "/user" + ApplicationNameAndPathConstants.INNER_SERVICE_PATH_FLAG)
 public interface UserService {
 
     @GetMapping("/queryAll")

@@ -1,5 +1,6 @@
 package com.charles.spring.cloud.order.controller;
 
+import com.charles.spring.cloud.framework.constants.ApplicationNameAndPathConstants;
 import com.charles.spring.cloud.framework.module.user.bo.UserBO;
 import com.charles.spring.cloud.framework.utils.ReturnMessage;
 import com.charles.spring.cloud.order.feign.UserFeignController;
@@ -17,7 +18,7 @@ import java.util.List;
  * @time: 11/10/2019 5:27 PM
  */
 @RestController
-@RequestMapping("/testFeign")
+@RequestMapping(ApplicationNameAndPathConstants.CONTROLLER_PATH_FLAG + "/testFeign")
 public class TestFeignController {
 
     @Autowired

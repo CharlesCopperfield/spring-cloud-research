@@ -1,6 +1,7 @@
 package com.charles.spring.cloud.user.controller;
 
 import brave.Tracer;
+import com.charles.spring.cloud.framework.constants.ApplicationNameAndPathConstants;
 import com.charles.spring.cloud.framework.module.goods.service.GoodsService;
 import com.charles.spring.cloud.framework.module.goods.service.OrderGoodsRelService;
 import com.charles.spring.cloud.framework.module.user.bo.UserBO;
@@ -23,7 +24,7 @@ import java.util.Map;
  */
 @Api("测试Feign相关功能")
 @RestController
-@RequestMapping("/feignTest")
+@RequestMapping(ApplicationNameAndPathConstants.CONTROLLER_PATH_FLAG + "/feignTest")
 public class FeignTestController {
 
     private static final Logger logger = LoggerFactory.getLogger(FeignTestController.class);

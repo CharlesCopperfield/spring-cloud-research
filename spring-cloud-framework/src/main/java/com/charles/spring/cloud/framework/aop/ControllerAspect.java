@@ -48,7 +48,6 @@ public class ControllerAspect {
         ReturnMessage returnMessage = null;
         long start = System.currentTimeMillis();
         try {
-            logger.info("begin call controller method({})", methodName);
             returnMessage = (ReturnMessage) joinPoint.proceed();
         } catch (Throwable throwable) {
             logger.error("exception to call controller method(" + methodName + "), the params=" +
@@ -56,7 +55,7 @@ public class ControllerAspect {
             // 生产环境不返回报错信息
             returnMessage = ReturnMessage.fail("prod".equalsIgnoreCase(profile) ? null : throwable);
         } finally {
-            logger.info("controller cost {} ms, end execute controller method({}).", (System.currentTimeMillis() - start), methodName);
+            logger.info("call controller cost {} ms, controller method={}", (System.currentTimeMillis() - start), methodName);
             String traceIdString = tracer.currentSpan().context().traceIdString();
             returnMessage.setTraceId(traceIdString);
         }
