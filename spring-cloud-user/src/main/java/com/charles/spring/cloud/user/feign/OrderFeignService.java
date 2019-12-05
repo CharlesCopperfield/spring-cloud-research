@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @time: 11/10/2019 3:47 PM
  */
 @FeignClient(name = ApplicationNameAndPathConstants.ORDER_APP_NAME,
-        path = ApplicationNameAndPathConstants.ORDER_APP_BASEPATH,
         contextId = "OrderFeignService")
-@RequestMapping("/feign")
 public interface OrderFeignService extends OrderService {
 
 }
