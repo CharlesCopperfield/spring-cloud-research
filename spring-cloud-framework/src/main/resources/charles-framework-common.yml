@@ -33,6 +33,14 @@ spring:
       max-idle: 3
       min-idle: 0
 
+  sleuth:
+    sampler:
+      probability: 1
+    web:
+      enabled: true
+  zipkin:
+    baseUrl: http://192.168.0.104:9411/
+
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 
