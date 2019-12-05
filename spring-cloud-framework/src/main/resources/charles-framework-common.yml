@@ -1,6 +1,6 @@
 #==============test================
 test:
-  sort: framework
+  sort: framework-default
 #==============test================
 #==============consul================
 spring:

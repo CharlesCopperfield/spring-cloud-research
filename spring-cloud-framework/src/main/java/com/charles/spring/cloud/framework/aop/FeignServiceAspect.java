@@ -52,7 +52,7 @@ public class FeignServiceAspect {
                     JsonUtils.getObjToString(args));
             throw new FeignCallException(e);
         } finally {
-            logger.info("feignService cost {} ms, end execute feignService method({}), the result={},", (System.currentTimeMillis() - start), methodName, JsonUtils.getObjToString(result));
+            logger.info("feignService cost {} ms, end execute feignService method({}), the result={},", (System.currentTimeMillis() - start), methodName, result.toString());
         }
         return result;
     }

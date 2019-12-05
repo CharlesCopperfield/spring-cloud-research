@@ -5,6 +5,7 @@ import com.charles.spring.cloud.framework.module.user.service.UserService;
 import com.charles.spring.cloud.framework.utils.ReturnMessage;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,9 @@ import java.util.List;
 @Api("用户服务")
 @RestController
 @RequestMapping("/user")
+@Slf4j
 public class UserController {
+
 
     @Autowired
     private UserService userService;

@@ -8,6 +8,12 @@ spring:
 #      host: 192.168.0.104
       host: localhost
       port: 8500
+  sleuth:
+    sampler:
+      probability: 1
+    web:
+      enabled: true
+
 
 server:
   port: 10001
@@ -25,12 +31,10 @@ management:
 mybatis:
   type-aliases-package: com.charles.spring.cloud.user.entity
 
-test:
-  sort: ${spring.application.name}.bootstrap.yml
-
 feign:
   hystrix:
     enabled: true
 
   httpclient:
     connection-timeout: 60000
+
