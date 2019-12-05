@@ -9,6 +9,7 @@ import org.springframework.cloud.openfeign.FeignClient;
  * @time: 11/10/2019 3:47 PM
  */
 @FeignClient(name = ApplicationNameAndPathConstants.GOODS_APP_NAME,
+        path = ApplicationNameAndPathConstants.ORDER_APP_BASEPATH,
         contextId = "GoodsFeignService")
 public interface GoodsFeignService extends GoodsService {
 

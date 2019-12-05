@@ -7,6 +7,7 @@ package com.charles.spring.cloud.framework.constants;
 public interface ApplicationNameAndPathConstants {
 
     String INNER_SERVICE_PATH_FLAG = "/innerService";
+
     String CONTROLLER_PATH_FLAG = "/controller";
 
     String USER_APP_NAME = "name-spring-cloud-user";

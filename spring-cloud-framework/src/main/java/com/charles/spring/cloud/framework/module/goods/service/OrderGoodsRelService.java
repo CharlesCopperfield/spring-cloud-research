@@ -13,8 +13,7 @@ import java.util.List;
  * @time: 11/10/2019 8:25 PM
  */
 @RestController
-@RequestMapping(ApplicationNameAndPathConstants.GOODS_APP_BASEPATH +
-        "/orderGoodsRel" + ApplicationNameAndPathConstants.INNER_SERVICE_PATH_FLAG)
+@RequestMapping("/orderGoodsRel" + ApplicationNameAndPathConstants.INNER_SERVICE_PATH_FLAG)
 public interface OrderGoodsRelService {
 
 

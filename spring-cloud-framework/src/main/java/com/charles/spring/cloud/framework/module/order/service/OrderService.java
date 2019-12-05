@@ -13,13 +13,12 @@ import java.util.List;
  * @time: 11/10/2019 9:31 AM
  */
 @RestController
-@RequestMapping(ApplicationNameAndPathConstants.ORDER_APP_BASEPATH +
-        "/order" + ApplicationNameAndPathConstants.INNER_SERVICE_PATH_FLAG)
+@RequestMapping("/order" + ApplicationNameAndPathConstants.INNER_SERVICE_PATH_FLAG)
 public interface OrderService {
 
     @GetMapping("/queryAll")
     List<OrderBO> queryAll();
 
-     @GetMapping("/queryAllOrderBOWithGoodsBOs")
+    @GetMapping("/queryAllOrderBOWithGoodsBOs")
     List<OrderBO> queryAllOrderBOWithGoodsBOs();
 }
